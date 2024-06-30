@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { lazy } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ChatBot from './components/chat/ChatBot';
+// import ChatComponent from './components/chat/ChatComponent.js';
 
 import { currentUser } from './functions/auth';
 
@@ -119,6 +121,7 @@ const App = () => {
                         <Route exact path="/checkout" component={Checkout} />
                         <Route exact path="/payment" component={Payment} />
                 </Switch>
+                {/* <ChatBot /> */}
                 <Footer />
             </BrowserRouter>
         </Suspense>
