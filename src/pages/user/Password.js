@@ -53,6 +53,7 @@ const Password = () => {
                 <Button
                     className="bg-light-primary text-light-on-primary rounded-full"
                     disabled={!password || password.length < 6 || loading || password !== confirmPassword}
+                    onClick={handleSubmit}
                 >
                     Submit
                 </Button>
@@ -61,7 +62,7 @@ const Password = () => {
     );
 
     return (
-        <div className="container-fluid mt-28 text-light-on-surface">
+        <div className="container-fluid pt-28 text-light-on-surface">
             <div className="row">
                 <div className="col-md-2">
                     <UserNav />
