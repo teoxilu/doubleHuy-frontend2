@@ -6,14 +6,11 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { lazy } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-<<<<<<< HEAD
 import { initGA, logPageView } from './components/analytics/analytics';
 import ScrollToTop from './functions/ScrollToTop';
 // import ChatBot from './components/chat/ChatBot';
 // import ChatComponent from './components/chat/ChatComponent.js';
-=======
 import {AnimatePresence} from 'framer-motion'
->>>>>>> 2f8babf102de8653f26686adf20f9ca197431d2f
 
 import { currentUser } from './functions/auth';
 import ScrollToTop from '~/utils/scrollToTop';

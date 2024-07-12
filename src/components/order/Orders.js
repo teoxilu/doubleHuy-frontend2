@@ -1,6 +1,7 @@
 import React from 'react';
 import { CheckCircleOutlined, CloseCircleOutlined } from '@ant-design/icons';
 import ShowPaymentInfo from '../cards/ShowPaymentInfo';
+import numeral from 'numeral';
 
 const Orders = ({ orders, handleStatusChange }) => {
     const showOrderInTable = (order) => (
@@ -11,7 +12,7 @@ const Orders = ({ orders, handleStatusChange }) => {
                     <th scope="col">Price</th>
                     <th scope="col">Brand</th>
                     <th scope="col">Size</th>
-                    <th scope="col">Count</th>
+                    <th scope="col">Quantity</th>
                 </tr>
             </thead>
 
@@ -22,7 +23,7 @@ const Orders = ({ orders, handleStatusChange }) => {
                             <b>{p.product.title}</b>
                         </td>
                         <td className="w-[20%]" style={{ verticalAlign: 'middle' }}>
-                            {p.product.price}
+                            {numeral(p.product.price).format('0,0')}
                         </td>
                         <td className="w-[20%]" style={{ verticalAlign: 'middle' }}>
                             {p.product.brand}
@@ -51,7 +52,7 @@ const Orders = ({ orders, handleStatusChange }) => {
                             <div className="col-md-8">
                                 <select
                                     onChange={(e) => handleStatusChange(order._id, e.target.value)}
-                                    className="form-control"
+                                    className="form-control focus:border-light-primary focus:shadow focus:shadow-light-primary focus:outline-none px-3 py-2 text-base text-light-on-surface focus:text-light-on-surface bg-light-surface-container-lowest border rounded-lg border-light-outline"
                                     defaultValue={order.orderStatus}
                                     name="status"
                                 >
