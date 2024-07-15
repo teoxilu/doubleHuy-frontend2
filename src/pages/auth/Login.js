@@ -69,12 +69,11 @@ const Login = () => {
                     });
                     roleBasedRedirect(res);
                 })
-                .catch((err) => console.log(err));
+                .catch((err) => console.error(err));
 
             history.push('/');
         } catch (error) {
-            console.error(error);
-            // toast.error(error.message);
+            toast("Wrong e-mail or password. Please try again.");
             setLoading(false);
         }
     };
@@ -147,7 +146,7 @@ const Login = () => {
             >
                 <div className="flex-col space-y-5">
                     {loading ? (
-                        <h4 className="text-danger">Loading...</h4>
+                        <h4 className="text-light-on-surface-variant animate-pulse">Loading...</h4>
                     ) : (
                         <Typography className="text-base font-normal text-light-on-surface">Log in</Typography>
                     )}

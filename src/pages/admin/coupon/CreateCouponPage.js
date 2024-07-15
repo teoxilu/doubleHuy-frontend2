@@ -10,7 +10,7 @@ import { Button } from '@material-tailwind/react';
 
 const CreateCouponPage = () => {
     const [name, setName] = useState('');
-    const [expiry, setExpiry] = useState('');
+    const [expiry, setExpiry] = useState(new Date());
     const [discount, setDiscount] = useState('');
     const [loading, setLoading] = useState('');
     const [coupons, setCoupons] = useState([]);
@@ -93,12 +93,11 @@ const CreateCouponPage = () => {
                         </div>
 
                         <div className="form-group">
-                            <label className="text-muted required">Expiry</label>
+                            <label className="text-muted required">Expired</label>
                             <br />
                             <DatePicker
                                 className="form-control focus:border-light-primary focus:shadow focus:shadow-light-primary focus:outline-none px-3 py-2 text-base text-light-on-surface bg-light-surface-container-lowest border rounded-lg border-light-outline"
-                                selected={new Date()}
-                                value={expiry}
+                                selected={expiry}
                                 onChange={(date) => setExpiry(date)}
                                 required
                             />
@@ -124,7 +123,7 @@ const CreateCouponPage = () => {
                             <thead className="thead-light text-center">
                                 <tr>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Expiry</th>
+                                    <th scope="col">Expired</th>
                                     <th scope="col">Discount</th>
                                     <th scope="col">Action</th>
                                 </tr>
